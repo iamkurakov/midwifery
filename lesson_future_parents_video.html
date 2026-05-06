@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Урок для будущих родителей: партнёрские роды и мягкое обезболивание</title>
+  <style>
+    :root{
+      --bg:#fff7f4;
+      --bg-2:#f7ebe8;
+      --paper:#ffffff;
+      --paper-soft:#fffdfb;
+      --ink:#3d3435;
+      --muted:#75686a;
+      --rose:#c76f8b;
+      --rose-dark:#a94f6c;
+      --rose-soft:#f7dce5;
+      --sage:#7fa397;
+      --sage-dark:#4f7f76;
+      --sand:#ecd6c3;
+      --cream:#fffaf2;
+      --line:#ead8d1;
+      --warn:#fff1d9;
+      --danger:#9d4b4b;
+      --shadow:0 20px 60px rgba(124,76,88,.13);
+      --radius-xl:34px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 7% 3%, rgba(199,111,139,.13), transparent 32rem),
+        radial-gradient(circle at 90% 9%, rgba(127,163,151,.18), transparent 30rem),
+        linear-gradient(180deg, var(--bg) 0%, #fffdfb 38%, var(--bg-2) 100%);
+      line-height:1.58;
+      min-height:100vh;
+    }
+
+    .progress{
+      position:fixed;
+      left:0;
+      top:0;
+      width:100%;
+      height:4px;
+      background:transparent;
+      z-index:1000;
+    }
+    .progress__bar{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,var(--rose),var(--sage));
+      transition:width .08s linear;
+    }
+
+    a{color:inherit;text-decoration:none}
+    p{margin:0 0 1rem}
+    ul,ol{margin:.7rem 0 0;padding-left:1.2rem}
+    li{margin:.38rem 0}
+    b,strong{color:var(--ink)}
+    mark{
+      background:linear-gradient(transparent 52%, rgba(247,220,229,.95) 52%);
+      color:inherit;
+      padding:0 .12em;
+    }
+
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+
+    header.topbar{
+      position:sticky;
+      top:0;
+      z-index:900;
+      background:rgba(255,250,247,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(234,216,209,.72);
+    }
+    .topbar__inner{
+      width:min(var(--max), calc(100% - 32px));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:74px;
+      gap:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:230px;
+    }
+    .brand__mark{
+      width:42px;
+      height:42px;
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 33% 28%, #fff 0 13%, transparent 14%),
+        linear-gradient(135deg,var(--rose),var(--sage));
+      box-shadow:0 10px 24px rgba(169,79,108,.18);
+      position:relative;
+      flex:0 0 42px;
+    }
+    .brand__mark:after{
+      content:"";
+      position:absolute;
+      inset:10px 13px;
+      border:2px solid rgba(255,255,255,.8);
+      border-top-color:transparent;
+      border-radius:50% 50% 44% 44%;
+      transform:rotate(-18deg);
+    }
+    .brand__title{
+      display:block;
+      font-weight:760;
+      letter-spacing:-.03em;
+      line-height:1.1;
+      font-size:.98rem;
+    }
+    .brand__sub{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      margin-top:2px;
+    }
+    nav.nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:4px;
+      flex-wrap:wrap;
+    }
+    .nav a{
+      font-size:.86rem;
+      padding:9px 11px;
+      border-radius:999px;
+      color:#5e5154;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .nav a:hover,
+    .nav a.active{
+      background:var(--rose-soft);
+      color:var(--rose-dark);
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:var(--paper);
+      border-radius:14px;
+      padding:10px 12px;
+      color:var(--ink);
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(124,76,88,.12);
+    }
+
+    main{overflow:hidden}
+    section{scroll-margin-top:92px}
+
+    .hero{
+      padding:70px 0 48px;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:16px auto auto 50%;
+      width:720px;
+      height:720px;
+      border:1px solid rgba(199,111,139,.13);
+      border-radius:49% 51% 46% 54%;
+      transform:translateX(-6%) rotate(12deg);
+      pointer-events:none;
+    }
+    .hero__grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:34px;
+      align-items:stretch;
+      position:relative;
+    }
+    .hero__card{
+      background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(255,251,249,.82));
+      border:1px solid rgba(234,216,209,.8);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      padding:48px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero__card:after{
+      content:"";
+      position:absolute;
+      right:-90px;
+      bottom:-130px;
+      width:320px;
+      height:320px;
+      background:radial-gradient(circle,rgba(199,111,139,.18),transparent 68%);
+      border-radius:50%;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:var(--rose-dark);
+      font-weight:750;
+      font-size:.86rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .eyebrow:before{
+      content:"";
+      width:34px;
+      height:2px;
+      background:var(--rose);
+      border-radius:999px;
+    }
+    h1,h2,h3{
+      margin:0;
+      line-height:1.08;
+      letter-spacing:-.045em;
+    }
+    h1{
+      font-size:clamp(2.35rem, 5vw, 5.65rem);
+      max-width:820px;
+    }
+    h1 .serif,
+    h2 .serif{
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:500;
+      color:var(--rose-dark);
+      letter-spacing:-.055em;
+    }
+    .hero__lead{
+      font-size:1.18rem;
+      color:var(--muted);
+      max-width:720px;
+      margin:24px 0 0;
+    }
+    .hero__meta{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:32px;
+      position:relative;
+      z-index:1;
+    }
+    .meta-card{
+      background:var(--cream);
+      border:1px solid rgba(234,216,209,.9);
+      border-radius:20px;
+      padding:18px;
+      min-height:118px;
+    }
+    .meta-card b{
+      display:block;
+      font-size:1.65rem;
+      color:var(--rose-dark);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .meta-card span{color:var(--muted);font-size:.92rem;display:block}
+
+    .side-panel{
+      display:grid;
+      gap:16px;
+    }
+    .quiet-card{
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(234,216,209,.82);
+      border-radius:var(--radius-lg);
+      padding:28px;
+      box-shadow:0 16px 36px rgba(124,76,88,.08);
+    }
+    .quiet-card h3{font-size:1.35rem;margin-bottom:12px}
+    .soft-list{list-style:none;padding:0;margin:0}
+    .soft-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px 0;
+      border-bottom:1px dashed rgba(234,216,209,.9);
+    }
+    .soft-list li:last-child{border-bottom:0}
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--rose);
+      margin-top:.55em;
+      flex:0 0 9px;
+    }
+    .note{
+      background:linear-gradient(135deg,rgba(127,163,151,.14),rgba(255,255,255,.92));
+      border:1px solid rgba(127,163,151,.28);
+      border-radius:var(--radius-lg);
+      padding:24px;
+      color:#405c57;
+    }
+    .note strong{color:var(--sage-dark)}
+
+    .section{padding:54px 0}
+    .section__head{
+      display:grid;
+      grid-template-columns:.76fr 1fr;
+      gap:34px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+    h2{font-size:clamp(2rem, 3.8vw, 4rem)}
+    .section__text{
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:720px;
+    }
+
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(234,216,209,.82);
+      border-radius:var(--radius-lg);
+      padding:26px;
+      box-shadow:0 14px 34px rgba(124,76,88,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .card h3{font-size:1.28rem;margin-bottom:12px}
+    .card p{color:var(--muted)}
+    .card--accent{
+      background:linear-gradient(135deg,#fff, #fff4f7);
+      border-color:rgba(199,111,139,.28);
+    }
+    .card--sage{
+      background:linear-gradient(135deg,#fff, #f1faf6);
+      border-color:rgba(127,163,151,.32);
+    }
+    .num{
+      display:inline-grid;
+      place-items:center;
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background:var(--rose-soft);
+      color:var(--rose-dark);
+      font-weight:820;
+      margin-bottom:14px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:#fff5f7;
+      color:var(--rose-dark);
+      font-weight:720;
+      font-size:.82rem;
+      margin:4px 6px 4px 0;
+      border:1px solid rgba(199,111,139,.2);
+    }
+    .tag.sage{background:#f2faf6;color:var(--sage-dark);border-color:rgba(127,163,151,.25)}
+
+    .map-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .map-item{
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(234,216,209,.82);
+      border-radius:22px;
+      padding:20px;
+      min-height:160px;
+      transition:.18s ease;
+    }
+    .map-item:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(124,76,88,.1)}
+    .map-item small{
+      display:block;
+      color:var(--rose-dark);
+      font-weight:800;
+      margin-bottom:12px;
+      letter-spacing:.06em;
+    }
+    .map-item b{display:block;font-size:1.07rem;margin-bottom:7px}
+    .map-item span{display:block;color:var(--muted);font-size:.92rem}
+
+    .formula{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+      gap:10px;
+      align-items:center;
+      margin:24px 0;
+    }
+    .formula__item{
+      background:var(--paper);
+      border:1px solid rgba(234,216,209,.9);
+      border-radius:20px;
+      padding:18px 16px;
+      min-height:92px;
+      text-align:center;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 24px rgba(124,76,88,.07);
+    }
+    .formula__item b{display:block;color:var(--rose-dark);font-size:1.05rem}
+    .formula__item span{display:block;color:var(--muted);font-size:.85rem;margin-top:4px}
+    .plus{font-size:1.6rem;color:var(--sage-dark);font-weight:700}
+
+    .warning{
+      background:var(--warn);
+      border:1px solid #f1cfa4;
+      border-radius:var(--radius-lg);
+      padding:24px 26px;
+      color:#6d5130;
+      box-shadow:0 12px 26px rgba(145,101,43,.08);
+    }
+    .warning h3{margin:0 0 10px;color:#6d5130;font-size:1.25rem}
+    .danger{
+      background:#fff4f4;
+      border:1px solid #efb7b7;
+      color:#704040;
+    }
+    .danger h3{color:var(--danger)}
+
+    .method-card{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .method-card .num{margin:0}
+    .method-card h3{margin-top:2px}
+    .method-card .practice{
+      margin-top:12px;
+      background:#fff8fa;
+      border:1px dashed rgba(199,111,139,.32);
+      border-radius:16px;
+      padding:14px;
+      color:#6a5158;
+    }
+
+    .timeline{
+      position:relative;
+      display:grid;
+      gap:18px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute;
+      left:27px;
+      top:16px;
+      bottom:16px;
+      width:2px;
+      background:linear-gradient(var(--rose),var(--sage));
+      opacity:.35;
+    }
+    .timeline-item{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:18px;
+      align-items:start;
+      position:relative;
+    }
+    .timeline-dot{
+      width:56px;
+      height:56px;
+      border-radius:19px;
+      background:linear-gradient(135deg,var(--rose),var(--sage));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:850;
+      box-shadow:0 12px 26px rgba(124,76,88,.18);
+      z-index:1;
+    }
+    .timeline-box{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(234,216,209,.82);
+      border-radius:var(--radius-lg);
+      padding:24px;
+      box-shadow:0 12px 30px rgba(124,76,88,.07);
+    }
+    .timeline-box h3{font-size:1.25rem;margin-bottom:8px}
+
+    .pose-card{
+      min-height:100%;
+    }
+    .pose-card .pose-label{
+      font-family:Georgia, "Times New Roman", serif;
+      color:var(--rose-dark);
+      font-size:1.35rem;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+      display:block;
+    }
+    .mini-figure{
+      width:100%;
+      height:116px;
+      border-radius:20px;
+      background:
+        radial-gradient(circle at 30% 45%, rgba(199,111,139,.16), transparent 24%),
+        radial-gradient(circle at 70% 45%, rgba(127,163,151,.16), transparent 24%),
+        #fffaf8;
+      border:1px solid rgba(234,216,209,.75);
+      margin-bottom:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .mini-figure:before,
+    .mini-figure:after{
+      content:"";
+      position:absolute;
+      border:3px solid rgba(117,104,106,.55);
+      border-color:rgba(117,104,106,.55) transparent transparent transparent;
+      border-radius:50%;
+      transform:rotate(-8deg);
+    }
+    .mini-figure:before{width:110px;height:52px;left:18%;top:45%}
+    .mini-figure:after{width:80px;height:46px;right:18%;top:32%;transform:rotate(18deg)}
+
+    .checklist{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+    .check{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.8);
+      border:1px solid rgba(234,216,209,.75);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    .check input{
+      appearance:none;
+      width:22px;
+      height:22px;
+      border-radius:8px;
+      border:2px solid rgba(199,111,139,.55);
+      margin-top:2px;
+      position:relative;
+      flex:0 0 22px;
+      background:#fff;
+      cursor:pointer;
+    }
+    .check input:checked{
+      background:var(--rose);
+      border-color:var(--rose);
+    }
+    .check input:checked:after{
+      content:"";
+      position:absolute;
+      left:6px;
+      top:2px;
+      width:6px;
+      height:11px;
+      border:solid #fff;
+      border-width:0 2px 2px 0;
+      transform:rotate(45deg);
+    }
+    .check span{color:#594d4f}
+
+    details{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(234,216,209,.86);
+      border-radius:20px;
+      padding:18px 20px;
+      box-shadow:0 10px 24px rgba(124,76,88,.06);
+    }
+    details+details{margin-top:12px}
+    summary{
+      cursor:pointer;
+      font-weight:820;
+      color:var(--ink);
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary:after{
+      content:"+";
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:var(--rose-soft);
+      color:var(--rose-dark);
+      flex:0 0 28px;
+    }
+    details[open] summary:after{content:"−"}
+    details p{margin:14px 0 0;color:var(--muted)}
+
+    .clarify-list{
+      display:grid;
+      gap:12px;
+    }
+    .clarify-item{
+      background:#fff;
+      border:1px solid rgba(234,216,209,.9);
+      border-left:5px solid var(--rose);
+      border-radius:18px;
+      padding:18px;
+    }
+    .clarify-item b{display:block;margin-bottom:5px}
+    .clarify-item span{display:block;color:var(--muted)}
+
+    .footer{
+      padding:40px 0 54px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .footer__box{
+      background:rgba(255,255,255,.7);
+      border:1px solid rgba(234,216,209,.8);
+      border-radius:24px;
+      padding:24px;
+    }
+
+
+    .video-cta{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:30px;
+    }
+    .video-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:178px;
+      padding:15px 26px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+      color:#fff;
+      font-weight:850;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      box-shadow:0 16px 34px rgba(169,79,108,.22);
+      border:1px solid rgba(255,255,255,.46);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .video-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 42px rgba(169,79,108,.28);
+      filter:saturate(1.04);
+    }
+    .video-btn:focus-visible{
+      outline:3px solid rgba(127,163,151,.45);
+      outline-offset:4px;
+    }
+
+    @media (max-width:1080px){
+      .hero__grid,.section__head{grid-template-columns:1fr}
+      .hero__meta{grid-template-columns:repeat(3,1fr)}
+      .map-grid,.grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .formula{grid-template-columns:1fr;gap:8px}
+      .plus{transform:rotate(90deg);justify-self:center}
+    }
+    @media (max-width:820px){
+      .topbar__inner{min-height:66px}
+      .menu-btn{display:inline-flex}
+      nav.nav{
+        position:absolute;
+        left:16px;
+        right:16px;
+        top:76px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        background:rgba(255,255,255,.98);
+        border:1px solid rgba(234,216,209,.92);
+        border-radius:22px;
+        padding:12px;
+        box-shadow:var(--shadow);
+      }
+      nav.nav.open{display:flex}
+      .nav a{padding:13px 15px;border-radius:14px}
+      .brand{min-width:auto}
+      .hero{padding:36px 0 34px}
+      .hero__card{padding:30px 24px}
+      .hero__meta{grid-template-columns:1fr}
+      .grid-2,.grid-3,.grid-4,.map-grid{grid-template-columns:1fr}
+      .section{padding:38px 0}
+      .quiet-card,.card,.timeline-box{padding:22px}
+      .method-card{grid-template-columns:1fr}
+      .timeline:before{left:21px}
+      .timeline-item{grid-template-columns:44px 1fr;gap:12px}
+      .timeline-dot{width:44px;height:44px;border-radius:16px}
+    }
+    @media (max-width:520px){
+      .wrap{width:min(100% - 24px, var(--max))}
+      .topbar__inner{width:min(100% - 24px, var(--max))}
+      h1{font-size:2.25rem}
+      h2{font-size:2rem}
+      .hero__lead,.section__text{font-size:1rem}
+      .meta-card{min-height:auto}
+      .brand__sub{display:none}
+      .warning,.note{padding:20px}
+      .timeline-box ul,.card ul{padding-left:1rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#start" aria-label="К началу урока">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>
+          <span class="brand__title">Урок для будущих родителей</span>
+          <span class="brand__sub">партнёрские роды · обезболивание · позы</span>
+        </span>
+      </a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Меню</button>
+      <nav class="nav" id="mainNav" aria-label="Навигация по уроку">
+        <a href="#pain">Боль</a>
+        <a href="#methods">Методы</a>
+        <a href="#partner">Партнёр</a>
+        <a href="#positions">Позы</a>
+        <a href="#pushing">Потуги</a>
+        <a href="#precursors">Предвестники</a>
+        <a href="#checklists">Чек-листы</a>
+        <a href="#faq">FAQ</a>
+        <a href="#clarify">Уточнить</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__card">
+          <span class="eyebrow">Мягкая подготовка к родам</span>
+          <h1>Партнёрские роды, <span class="serif">естественное обезболивание</span> и позы</h1>
+          <p class="hero__lead">Сайт-урок объединяет материалы о причинах боли, дыхании, звучании, гидротерапии, поддержке партнёра, потугах, предвестниках и безопасной ориентации в родах.</p>
+          <div class="hero__meta" aria-label="Ключевые параметры урока">
+            <div class="meta-card"><b>5</b><span>причин, которые могут усиливать дискомфорт</span></div>
+            <div class="meta-card"><b>8</b><span>методов естественного обезболивания</span></div>
+            <div class="meta-card"><b>3</b><span>периода родов с задачами партнёра</span></div>
+          </div>
+        </div>
+        <aside class="side-panel" aria-label="Краткая суть урока">
+          <div class="quiet-card">
+            <h3>Главная идея</h3>
+            <p>Работу матки убрать нельзя. Но можно уменьшить то, что усиливает ощущения: страх, мышечное напряжение, неудобную позу, хаос вокруг и неподготовленность партнёра.</p>
+          </div>
+          <div class="note">
+            <strong>Медицинская граница:</strong> материал является учебным конспектом. Он не заменяет консультацию врача, акушерки и правила конкретного роддома. Все решения о вмешательствах, обезболивании, воде, КТГ и потугах согласуются с медицинской командой.
+          </div>
+        </aside>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="map">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Структура <span class="serif">урока</span></h2>
+          <p class="section__text">Материалы собраны не как набор памяток, а как последовательная подготовка: понять механизм, освоить инструменты, распределить роли, подготовить вопросы к роддому.</p>
+        </div>
+        <div class="map-grid">
+          <a class="map-item" href="#pain"><small>01</small><b>Почему боль усиливается</b><span>Механизм страха, напряжения и пять причин дискомфорта.</span></a>
+          <a class="map-item" href="#methods"><small>02</small><b>Методы обезболивания</b><span>Дыхание, партнёр, массаж, вода, позы, ароматы, звук, глубокое расслабление.</span></a>
+          <a class="map-item" href="#partner"><small>03</small><b>Задачи партнёра</b><span>Что делает партнёр дома, в приёмном отделении, на схватках, потугах и в золотой час.</span></a>
+          <a class="map-item" href="#positions"><small>04</small><b>Позы в родах</b><span>Первый и второй периоды: коленно-локтевая, вертикальная, на боку, на коленях, вода.</span></a>
+          <a class="map-item" href="#pushing"><small>05</small><b>Потуги и промежность</b><span>Ошибки, расслабление, дыхание и практики подготовки.</span></a>
+          <a class="map-item" href="#precursors"><small>06</small><b>Предвестники</b><span>Сроки, слизистые выделения, пробка, зрелость шейки, тест начала родов.</span></a>
+          <a class="map-item" href="#checklists"><small>07</small><b>Чек-листы</b><span>Подготовка, вопросы к роддому, действия партнёра.</span></a>
+          <a class="map-item" href="#clarify"><small>08</small><b>Нужно уточнить</b><span>Пункты из материалов, которые требуют проверки у врача, юриста или роддома.</span></a>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="pain">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Как устроена <span class="serif">боль</span> в родах</h2>
+          <p class="section__text">В материалах боль описана как сумма физиологии и реакции нервной системы. Сокращения матки — объективная часть. Остальное можно частично регулировать подготовкой, средой, дыханием, позой и поддержкой.</p>
+        </div>
+
+        <div class="formula" aria-label="Формула боли в родах">
+          <div class="formula__item"><b>Работа матки</b><span>сокращения, раскрытие, продвижение малыша</span></div>
+          <div class="plus">+</div>
+          <div class="formula__item"><b>Страх</b><span>сигнал опасности для мозга</span></div>
+          <div class="plus">+</div>
+          <div class="formula__item"><b>Напряжение</b><span>зажим мышц, дыхания, челюсти, таза</span></div>
+          <div class="plus">+</div>
+          <div class="formula__item"><b>Неудобная поза</b><span>лишнее давление и ограничение движения</span></div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card card--sage">
+            <h3>Что происходит в напряжённом теле</h3>
+            <p>Страх запускает реакцию опасности: дыхание сбивается, мышцы напрягаются, тело получает команду «защищайся». Шейке матки нужно расслабление, а окружающие мышцы могут создавать сопротивление. Поэтому ощущения усиливаются, а роды могут идти тяжелее.</p>
+          </div>
+          <div class="card card--accent">
+            <h3>Что помогает телу</h3>
+            <p>Тишина, тепло, уединение, ощущение безопасности, понятные действия партнёра, свободная смена поз, длинный выдох и низкий звук помогают телу получать сигнал «опасности нет». Это снижает лишнее напряжение.</p>
+          </div>
+        </div>
+
+        <div class="section__head" style="margin-top:48px">
+          <h2>5 причин <span class="serif">усиления</span> ощущений</h2>
+          <p class="section__text">Повторяющиеся фрагменты из разных материалов объединены в одну карту причин.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>Медицинские вмешательства</h3>
+            <p>В материалах отдельно выделены родовозбуждение, амниотомия и искусственный окситоцин. Они могут делать ощущения более интенсивными, поэтому любое вмешательство должно объясняться медицинской командой.</p>
+            <span class="tag">родовозбуждение</span><span class="tag">амниотомия</span><span class="tag">окситоцин</span>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>Анатомические особенности</h3>
+            <p>Травмы таза, спайки, искривление таза и другие изменения естественной физиологии могут влиять на ощущения. В таких случаях особенно важны индивидуальная подготовка и наблюдение специалиста.</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>Чрезмерное мышечное напряжение</h3>
+            <p>Напряжение может возникать в матке, связках и соседних органах. Стресс, высокий темп жизни и невыраженные эмоции накапливаются в теле и усиливают зажим.</p>
+          </article>
+          <article class="card">
+            <span class="num">04</span>
+            <h3>Неудобная поза</h3>
+            <p>Положение тела имеет значение. В материалах отмечено, что подвижность и вертикальные положения для женщин с низким риском осложнений стоит поощрять, если это разрешено медицинской ситуацией.</p>
+          </article>
+          <article class="card">
+            <span class="num">05</span>
+            <h3>Страх, тревога, недоверие</h3>
+            <p>Негативные мысли, прошлый опыт, дискомфортная обстановка, недоброжелательность персонала и отсутствие доверия могут запускать мышечный зажим. Поэтому спокойствие ума — не украшение, а практический навык.</p>
+          </article>
+          <article class="card card--sage">
+            <span class="num">→</span>
+            <h3>Что делать до родов</h3>
+            <p>Убрать пугающие представления о родах, освоить успокоение ума, тренировать глубокое расслабление и заранее проверить, какие условия доступны в выбранном роддоме.</p>
+          </article>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="methods">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>8 методов <span class="serif">естественного</span> обезболивания</h2>
+          <p class="section__text">Первые семь методов — базовые инструменты. Восьмой метод в материалах описан как профессиональный уровень: тренировка глубокого расслабления и изменение восприятия боли.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card method-card">
+            <span class="num">1</span>
+            <div>
+              <h3>Антистрессовое дыхание</h3>
+              <p>Удлинённый выдох помогает переключать тело из стрессовой реакции в режим расслабления.</p>
+              <div class="practice"><b>Практика:</b> вдох через нос на 4 счёта, выдох через рот на 8 счётов, повторить 5 раз. Тренировка: 3 раза в день по 2 минуты.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">2</span>
+            <div>
+              <h3>Эффект безопасности</h3>
+              <p>Подготовленный спокойный партнёр даёт ощущение опоры, помогает удерживать дыхание, звук, контакт и бытовые действия. Неподготовленный партнёр может усилить стресс.</p>
+              <div class="practice"><b>Важно:</b> рожать без партнёра тоже нормальный выбор, если женщине легче погружаться в процесс одной.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">3</span>
+            <div>
+              <h3>Контактная поддержка и массаж</h3>
+              <p>Тёплые уверенные ладони на пояснице и крестце перераспределяют внимание, расслабляют мышцы и создают сигнал безопасности.</p>
+              <div class="practice"><b>Как делать:</b> на схватке — усилить давление и мягко растирать; между схватками — держать руки и сохранять контакт. Заранее проверить, какие прикосновения помогают.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">4</span>
+            <div>
+              <h3>Вода: душ или ванна</h3>
+              <p>Тёплая вода расслабляет мышцы, снимает спазм и даёт ощущение комфорта.</p>
+              <div class="practice"><b>Условия:</b> температура 36–37°C. Не горячая. Оптимально при раскрытии от 4–5 см и регулярных схватках. На потугах — только если врач разрешает и роддом практикует роды в воде.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">5</span>
+            <div>
+              <h3>Активные позы и движение</h3>
+              <p>Нет одной идеальной позы. То, что помогало 20 минут назад, может начать мешать. Нужен набор вариантов и способность менять положение.</p>
+              <div class="practice"><b>Варианты:</b> стоя с опорой, на четвереньках, асимметричные позы, полусидя, на корточках, восьмёрки тазом, медленный танец с партнёром.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">6</span>
+            <div>
+              <h3>Знакомый аромат</h3>
+              <p>Домашний запах помогает мозгу считать обстановку более безопасной. В материалах предложены лаванда, ромашка, нероли, ладан; для бодрости — цитрусовые.</p>
+              <div class="practice"><b>Без масел:</b> футболка партнёра или домашняя наволочка. Ароматы не убирают боль полностью, но усиливают общий ритуал расслабления.</div>
+            </div>
+          </article>
+
+          <article class="card method-card">
+            <span class="num">7</span>
+            <div>
+              <h3>Звучание в родах</h3>
+              <p>Низкий тянущийся звук на выдохе помогает расслаблять челюсть, плечи, живот, таз и промежность. Высокий крик чаще связан с паникой и зажимом.</p>
+              <div class="practice"><b>Практика:</b> вдох, затем на выдохе тянуть низкое «мммм» или «оооо», ощущая вибрацию в груди.</div>
+            </div>
+          </article>
+
+          <article class="card method-card card--sage">
+            <span class="num">8</span>
+            <div>
+              <h3>Глубокое расслабление и гипноанестезия</h3>
+              <p>В материалах это описано как состояние расслабления и концентрации, где мозг иначе реагирует на сигналы тела. Это не эстрадный гипноз: женщина остаётся в сознании, слышит врачей и может управлять действиями.</p>
+              <div class="practice"><b>Подготовка:</b> короткие ежедневные практики, самовнушение, дыхание, расслабление, работа с вниманием. Эффект не является гарантией и зависит от подготовки и ситуации родов.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="warning" style="margin-top:22px">
+          <h3>Ограничения методов</h3>
+          <p>Дыхание, вода, массаж, ароматы, звук и движение помогают снижать напряжение, но не отменяют медицинские показания. Если есть температура, кровотечение, резкое ухудшение состояния, тревожные изменения ощущений или ограничения врача, бытовые методы не заменяют медицинскую помощь.</p>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="partner">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Партнёрские роды: <span class="serif">роль</span> и действия</h2>
+          <p class="section__text">Партнёр — не зритель. Его функция: психологическая, физическая, эмоциональная и организационная поддержка, а также посредничество между женщиной и персоналом.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card card--accent">
+            <h3>Поддержка</h3>
+            <p>Помогает женщине чувствовать защищённость, не возвращает её в анализ и контроль, напоминает о дыхании, звучании, воде, позах и отдыхе между схватками.</p>
+          </div>
+          <div class="card card--sage">
+            <h3>Медиатор</h3>
+            <p>Спокойно передаёт пожелания медицинскому персоналу, задаёт вопросы, фиксирует договорённости, помогает заполнить документы и не создаёт конфликта без необходимости.</p>
+          </div>
+          <div class="card">
+            <h3>Бытовая опора</h3>
+            <p>Даёт пить, помогает сходить в туалет, следит за вещами, дорогой, едой, сменной одеждой, контактом с врачом и моментом выезда.</p>
+          </div>
+        </div>
+
+        <div class="timeline" style="margin-top:30px">
+          <article class="timeline-item">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-box">
+              <h3>Первый период: схватки и дорога в роддом</h3>
+              <ul>
+                <li>Засекать время схваток и отслеживать динамику.</li>
+                <li>Собрать сумку в роддом, свою сменную одежду и обувь, еду для себя.</li>
+                <li>Подготовить напитки, которые заранее разрешены и согласованы.</li>
+                <li>Связаться с врачом, обозначить ситуацию.</li>
+                <li>Проверить дорогу и рассчитать время пути.</li>
+                <li>Помочь принять решение о выезде по заранее согласованным критериям.</li>
+                <li>В приёмном отделении помочь с документами.</li>
+                <li>Спокойно повторить важные пожелания медицинскому персоналу.</li>
+                <li>Помогать дыханием, звучанием, массажем, водой, позами.</li>
+                <li>Понять начало потуг и вовремя позвать персонал.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-box">
+              <h3>Второй период: потужной</h3>
+              <ul>
+                <li>Дышать вместе с женщиной и помогать не уходить в панику.</li>
+                <li>Давать воду при необходимости и если это разрешено.</li>
+                <li>Поддерживать выбранную позу, верхнюю ногу или корпус, если используется положение на боку.</li>
+                <li>Звать медицинский персонал при изменении состояния или начале активной фазы.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-box">
+              <h3>Третий период: послед и золотой час</h3>
+              <ul>
+                <li>Подготовить пелёнку, чтобы накрыть ребёнка.</li>
+                <li>Оставаться рядом, когда ребёнок находится на маме.</li>
+                <li>После рождения последа и отсечения пуповины взять малыша к себе на голое тело, если это разрешено ситуацией и правилами роддома.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="warning" style="margin-top:22px">
+          <h3>Партнёр должен быть подготовлен</h3>
+          <p>Фразы «тебе больно?», «может врача позвать?», суета, паника и советы из фильмов повышают напряжение. Задача партнёра — быть спокойным, понятным и технически полезным.</p>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="positions">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Позы в <span class="serif">родах</span></h2>
+          <p class="section__text">Позы нужно пробовать заранее. В родах важно не «правильно стоять», а чувствовать тело, менять положение и выбирать то, что помогает именно сейчас.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Коленно-локтевая поза</span>
+            <p>Помогает расслабить ум, освобождает область живота, снижает нагрузку на спину и таз, позволяет плавно двигать тазом. В материалах отмечено, что поза может подходить и для потужного периода.</p>
+            <span class="tag sage">первый период</span><span class="tag sage">потуги по ситуации</span>
+          </article>
+
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Вертикальная поза с провисанием</span>
+            <p>Варианты: провисание на партнёре или на предмете. Даёт психологическую опору, снимает напряжение с поясницы и может помогать малышу опускаться. Нагрузку на ноги нужно распределять равномерно.</p>
+            <span class="tag sage">опора партнёра</span><span class="tag sage">движение вниз</span>
+          </article>
+
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Лёжа на боку</span>
+            <p>Если хочется лежать, лучшая опция из материалов — бок. Используются подушки под голову, спину, ноги и руки. Поза помогает отдыхать между волнами, снижать давление и может быть безопаснее стоячих поз при медикаментозном обезболивании.</p>
+            <span class="tag">отдых</span><span class="tag">подушки</span>
+          </article>
+
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Лёжа на боку в потугах</span>
+            <p>На стадии рождения малыша партнёр или персонал может поддерживать верхнюю ногу. В материалах указано: поза даёт отдых между потугами, может снижать вероятность геморроя и замедлять слишком стремительную вторую стадию.</p>
+            <span class="tag">второй период</span><span class="tag">поддержка ноги</span>
+          </article>
+
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Поза на коленях</span>
+            <p>Описана как физиологичная поза, поддерживающая активное поведение женщины. Помогает расслаблять мышцы, промежность и тазовую область, использует гравитацию и снижает давление на поясницу.</p>
+            <span class="tag sage">широкий выход таза</span><span class="tag sage">партнёр рядом</span>
+          </article>
+
+          <article class="card pose-card">
+            <div class="mini-figure" aria-hidden="true"></div>
+            <span class="pose-label">Вода: ванна или душ</span>
+            <p>Если течение родов и правила роддома позволяют, в воде можно использовать вариации коленно-локтевой позы с опорой или полусидя. В душе можно опираться руками и делать круговые движения тазом.</p>
+            <span class="tag">только с разрешением</span><span class="tag">36–37°C</span>
+          </article>
+        </div>
+
+        <div class="warning" style="margin-top:22px">
+          <h3>Вопросы про КТГ и свободу движения</h3>
+          <p>Заранее уточните в роддоме: можно ли делать КТГ стоя или сидя на фитболе, сколько длится мониторинг, можно ли между записями свободно двигаться.</p>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="pushing">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Потуги и <span class="serif">профилактика</span> разрывов</h2>
+          <p class="section__text">Этот блок очищен от повторов и жёстких формулировок. Смысл материалов: не форсировать тело, не зажимать лицо и промежность, тренировать расслабление заранее и обсуждать тактику потуг с медицинской командой.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="num">1</span>
+            <h3>Не тужиться раньше времени</h3>
+            <p>В материалах подчёркнуто: преждевременные потуги дают нагрузку на ткани, когда они ещё не готовы. Ориентир — естественный рефлекс и команда медицинской команды, с которой заранее обсуждена бережная тактика.</p>
+          </article>
+          <article class="card">
+            <span class="num">2</span>
+            <h3>Не задерживать дыхание «в лицо»</h3>
+            <p>Зажатое лицо, челюсть и задержка дыхания усиливают общий зажим. В материалах используется идея медленного выпуска воздуха, низкого звука и дыхания с расслаблением.</p>
+          </article>
+          <article class="card">
+            <span class="num">3</span>
+            <h3>Расслаблять промежность</h3>
+            <p>Акцент сделан не на силе, а на управлении расслаблением. Материалы предлагают обратный Кегель, визуализацию открытия и дыхание с ощущением тяжести и расслабления промежности.</p>
+          </article>
+          <article class="card">
+            <span class="num">4</span>
+            <h3>Выбирать позу</h3>
+            <p>Поза на спине в материалах названа неудобной для промежности. Вертикальные положения, четвереньки, колени и бок рассматриваются как более мягкие варианты, если они разрешены в конкретной ситуации.</p>
+          </article>
+          <article class="card">
+            <span class="num">5</span>
+            <h3>Работать со страхом</h3>
+            <p>Истории, фильмы, прошлый опыт и фразы врачей могут закреплять связку «роды = боль + разрывы». Поэтому нужна подготовка психики: расслабление, дыхание, визуализация, доверие к телу и понятная среда.</p>
+          </article>
+          <article class="card card--sage">
+            <span class="num">6</span>
+            <h3>Проверить питание и дефициты</h3>
+            <p>В исходных материалах упомянуты белок, питьевой режим и прогестерон как факторы, требующие внимания. Эти пункты нельзя применять как самостоятельную медицинскую рекомендацию: их нужно обсуждать с врачом.</p>
+          </article>
+        </div>
+
+        <div class="card card--accent" style="margin-top:22px">
+          <h3>Практика «волна промежности» из материалов</h3>
+          <p>Лечь удобно, руки на живот, закрыть глаза. Вдох на 4 счёта — живот поднимается. Выдох на 6 счётов со звуком «аааа» — живот мягко опускается, промежность расслабляется. Визуализация: мягкое раскрытие. Повторять 10 раз около 5 минут ежедневно, если нет противопоказаний и дискомфорта.</p>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="precursors">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Предвестники и <span class="serif">ориентиры</span></h2>
+          <p class="section__text">В загруженных материалах предвестники даны кратко. Ниже — очищенная версия без лишних изображений и повторов.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="num">ПДР</span>
+            <h3>Дата родов — ориентир</h3>
+            <p>В материалах указано: в предполагаемый день родов рождается небольшая часть детей; многие роды приходятся на 39–40 неделю или несколько дней до ПДР. При первых родах беременность может длиться до 42 недель без автоматической трактовки как переношенная.</p>
+          </article>
+          <article class="card">
+            <span class="num">1</span>
+            <h3>Срок предвестников</h3>
+            <p>От появления симптомов готовности до начала родов при первой беременности может пройти от 3–4 дней до 2 недель. Это усреднённый ориентир, а не точный прогноз.</p>
+          </article>
+          <article class="card">
+            <span class="num">2</span>
+            <h3>Слизистые выделения</h3>
+            <p>Возможно усиление секреции слизистых: влагалищные выделения становятся обильнее, также могут быть прозрачные слизистые выделения из носа и носоглотки. Важно соблюдать гигиену.</p>
+          </article>
+          <article class="card">
+            <span class="num">3</span>
+            <h3>Слизистая пробка</h3>
+            <p>Чаще за сутки до родов может отходить слизистая пробка. В материалах указаны разные варианты цвета: белесый, розоватый, красный, коричневый, прозрачный.</p>
+          </article>
+          <article class="card">
+            <span class="num">4</span>
+            <h3>Зрелость шейки</h3>
+            <p>В материалах перечислены признаки зрелости: шейка расположена по оси таза, размягчена, укорочена, канал пропускает палец у первородящих и два пальца у повторнородящих. Это оценивает специалист.</p>
+          </article>
+          <article class="card card--sage">
+            <span class="num">5</span>
+            <h3>Тест начала родов</h3>
+            <p>Предложенные ориентиры: попытаться уснуть, принять тёплую ванну около 20 минут, засечь промежутки между схватками, оценить раскрытие у специалиста. Ванна допустима только при отсутствии противопоказаний и после согласования.</p>
+          </article>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="checklists">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Чек-листы <span class="serif">подготовки</span></h2>
+          <p class="section__text">Интерактивные чек-листы сохраняют отметки в браузере. Они не отправляют данные наружу.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>До родов</h3>
+            <div class="checklist">
+              <label class="check"><input type="checkbox" data-save="before-1"><span>Выбрать 1–2 метода и тренировать их ежедневно.</span></label>
+              <label class="check"><input type="checkbox" data-save="before-2"><span>Отработать дыхание 4/8 до автоматизма.</span></label>
+              <label class="check"><input type="checkbox" data-save="before-3"><span>Проверить, какие прикосновения и массаж помогают.</span></label>
+              <label class="check"><input type="checkbox" data-save="before-4"><span>Попробовать позы: бок, коленно-локтевая, вертикальная опора, колени.</span></label>
+              <label class="check"><input type="checkbox" data-save="before-5"><span>Подготовить знакомый аромат или домашнюю вещь.</span></label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Вопросы к роддому</h3>
+            <div class="checklist">
+              <label class="check"><input type="checkbox" data-save="hospital-1"><span>Разрешён ли партнёр и какие документы нужны.</span></label>
+              <label class="check"><input type="checkbox" data-save="hospital-2"><span>Есть ли душ или ванна в родблоке.</span></label>
+              <label class="check"><input type="checkbox" data-save="hospital-3"><span>Можно ли двигаться во время КТГ.</span></label>
+              <label class="check"><input type="checkbox" data-save="hospital-4"><span>Какие позы разрешены на схватках и потугах.</span></label>
+              <label class="check"><input type="checkbox" data-save="hospital-5"><span>Можно ли использовать аромат, музыку, фото или видео.</span></label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Партнёр</h3>
+            <div class="checklist">
+              <label class="check"><input type="checkbox" data-save="partner-1"><span>Знает периоды родов и признаки потуг.</span></label>
+              <label class="check"><input type="checkbox" data-save="partner-2"><span>Умеет дышать и звучать вместе с женщиной.</span></label>
+              <label class="check"><input type="checkbox" data-save="partner-3"><span>Знает, как делать массаж поясницы и крестца.</span></label>
+              <label class="check"><input type="checkbox" data-save="partner-4"><span>Готовит свою одежду, обувь, еду и документы.</span></label>
+              <label class="check"><input type="checkbox" data-save="partner-5"><span>Сохраняет спокойный тон и не задаёт тревожные вопросы.</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:18px">
+          <div class="warning danger">
+            <h3>Когда вода не подходит</h3>
+            <p>Не использовать ванну/душ как метод расслабления без разрешения врача при кровотечении, температуре, подозрении на инфекционный риск или если после отхождения вод прошло много времени. В материалах указан ориентир более 12 часов после отхождения вод — только уточнять у врача.</p>
+          </div>
+          <div class="warning danger">
+            <h3>Когда боль — не просто «норма родов»</h3>
+            <p>В материалах к патологическому течению отнесены неправильные вставления и предлежания плода, перерастяжения мышц, кислородное голодание мышц, дискоординация родовой деятельности, неправильное положение матки, стимуляция и вмешательства. Такие ситуации оценивает только медицинская команда.</p>
+          </div>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="section__text">Частые вопросы собраны из повторяющихся смыслов материалов.</p>
+        </div>
+
+        <details>
+          <summary>Партнёр обязателен?</summary>
+          <p>Нет. В материалах отдельно сказано, что некоторым женщинам комфортнее рожать без внешних раздражителей. Партнёр полезен только тогда, когда он подготовлен, спокоен и реально помогает.</p>
+        </details>
+        <details>
+          <summary>Эти методы заменяют эпидуральную анестезию?</summary>
+          <p>Нет. Это способы снизить страх, напряжение и субъективную интенсивность ощущений. Решение об эпидуральной анестезии, её отсрочке или применении принимает женщина совместно с врачом по медицинской ситуации.</p>
+        </details>
+        <details>
+          <summary>Что делать, если в роддоме нет ванны?</summary>
+          <p>Использовать душ, если он доступен. Альтернативы из материалов: тёплые влажные полотенца на поясницу или бутылка с тёплой водой, завёрнутая в полотенце. Горячую воду не использовать.</p>
+        </details>
+        <details>
+          <summary>Можно ли звучать, если персонал просит не кричать?</summary>
+          <p>Низкий звук — это техника дыхания, а не хаотичный крик. Партнёр может спокойно объяснить: женщина использует звуковое дыхание для расслабления. Но правила отделения и медицинские указания нужно учитывать.</p>
+        </details>
+        <details>
+          <summary>Почему поза лёжа на спине критикуется в материалах?</summary>
+          <p>Потому что крестец ограничен, движение таза снижено, матка работает против силы тяжести, а давление на спину может усиливаться. При этом иногда медицинская ситуация требует конкретного положения. Тогда приоритет — безопасность.</p>
+        </details>
+        <details>
+          <summary>Что партнёру нельзя делать?</summary>
+          <p>Паниковать, суетиться, задавать тревожные вопросы, спорить без цели, навязывать советы, обесценивать ощущения, заставлять женщину анализировать процесс. Его задача — спокойная техническая поддержка.</p>
+        </details>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+
+    <section class="section" id="clarify">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Нужно <span class="serif">уточнить</span></h2>
+          <p class="section__text">Эти места сохранены, но вынесены отдельно, потому что требуют медицинской, юридической или организационной проверки. Они не должны подаваться как универсальная инструкция.</p>
+        </div>
+        <div class="clarify-list">
+          <div class="clarify-item"><b>«4 ошибки» против фактических 6 пунктов</b><span>В материалах блок назван «4 ошибки», но далее перечислены дополнительные факторы: страхи, дефициты, прогестерон. В сайте это объединено как «ошибки и факторы».</span></div>
+          <div class="clarify-item"><b>Юридические формулировки про съёмку и «управляемые потуги»</b><span>Утверждения о праве на фото/видео и о запрете управляемых потуг требуют проверки по законодательству, правилам роддома и договору с учреждением.</span></div>
+          <div class="clarify-item"><b>Цифры эффективности и статистика</b><span>60–70%, 20%, 2–4 раза, «не более 5% в ПДР» и другие числа оставлены только как данные из авторских материалов, не как гарантированные клинические показатели.</span></div>
+          <div class="clarify-item"><b>Белок, питьевой режим, прогестерон</b><span>Эти пункты нельзя использовать как самостоятельную схему профилактики разрывов. Нужна консультация врача, который ведёт беременность.</span></div>
+          <div class="clarify-item"><b>Травы, сок, витамин C, ванна, вода после отхождения вод</b><span>Любые напитки, травы, добавки и использование воды в родах согласуются с врачом, особенно при отошедших водах, температуре, кровотечении или инфекционных рисках.</span></div>
+        </div>
+      </div>
+    
+    <div class="wrap video-cta">
+      <a class="video-btn" href="https://disk.yandex.ru/d/NtBbvpHUmtJ5jw" target="_blank" rel="noopener noreferrer">ВИДЕО</a>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__box">
+      <p><strong>Итог урока:</strong> подготовка к родам — это не попытка «перетерпеть». Это система: понять механизм боли, убрать лишнее напряжение, подготовить партнёра, освоить дыхание и звучание, знать доступные позы, заранее согласовать условия роддома и держать медицинскую безопасность выше любых техник.</p>
+      <p style="margin-bottom:0">Источник контента: загруженные методические материалы. Текст очищен от дублей, сгруппирован и адаптирован в формат сайта-урока.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mainNav');
+    const progressBar = document.getElementById('progressBar');
+    const navLinks = [...document.querySelectorAll('.nav a')];
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    function updateProgress(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progressBar.style.width = value + '%';
+    }
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, {passive:true});
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const id = '#' + entry.target.id;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+        }
+      });
+    }, {rootMargin:'-35% 0px -58% 0px', threshold:0});
+
+    sections.forEach(section => observer.observe(section));
+
+    document.querySelectorAll('input[data-save]').forEach(input => {
+      const key = 'future-parents-lesson:' + input.dataset.save;
+      input.checked = localStorage.getItem(key) === '1';
+      input.addEventListener('change', () => {
+        localStorage.setItem(key, input.checked ? '1' : '0');
+      });
+    });
+  </script>
+</body>
+</html>
